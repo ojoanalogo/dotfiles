@@ -15,7 +15,6 @@ mainbox {
     background-color: @background;
     children: [ inputbar, listview ];
     spacing: 15px;
-    padding: 15px;
 }
 
 inputbar {
@@ -28,13 +27,13 @@ inputbar {
 prompt {
     enabled: true;
     padding: 10px;
-    background-color: @altbackground;
+    background-color: @accent;
     text-color: @foreground;
     font: "Terminus 12";
 }
 
 entry {
-    background-color: @altbackground;
+    background-color: @accent;
     text-color: @foreground;
     placeholder-color: @foreground;
     expand: true;
@@ -49,7 +48,7 @@ element-icon {
 }
 
 listview {
-    background-color: @altbackground;
+    background-color: @background;
     padding: 10px;
     columns: 5;
     lines: 6;
@@ -61,7 +60,7 @@ listview {
 
 element {
     padding: 20;
-    background-color: @altbackground;
+    background-color: @background;
     text-color: @foreground;
     orientation: vertical;
     border-radius: 0%;
@@ -72,7 +71,7 @@ element-text {
     text-color: inherit;
     font: "Terminus 10";
     expand: true;
-    horizontal-align: 0.5;
+    horizontal-align: 0;
     vertical-align: 0.5;
-    margin: 0px;
+    margin: 5px;
 }

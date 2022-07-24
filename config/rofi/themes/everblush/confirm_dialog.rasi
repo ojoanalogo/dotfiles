@@ -8,12 +8,14 @@ configuration {
 prompt {
     enabled: true;
     text-color: @foreground;
+    background-color: @background;
 }
 
 entry {
     enabled: true;
     placeholder: "Y/N";
     text-color: @foreground;
+    background-color: @background;
 }
 
 window {

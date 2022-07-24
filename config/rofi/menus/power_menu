@@ -5,17 +5,17 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-dir="$HOME/.config/rofi/themes/material"
+dir="$HOME/.config/rofi/themes/everblush"
 uptime=$(uptime -p | sed -e 's/up //g')
 
 rofi_command="rofi -theme $dir/power_menu.rasi"
 
 # Options
-shutdown=""
-reboot=""
 lock=""
 suspend="鈴"
 logout=""
+reboot=""
+shutdown=""
 
 # Confirmation
 confirm_exit() {

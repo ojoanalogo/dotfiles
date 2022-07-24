@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$HOME/.config/rofi/themes/material"
+dir="$HOME/.config/rofi/themes/everblush"
 
 rofi_command="rofi -theme $dir/monitor_menu.rasi"
 
@@ -8,8 +8,8 @@ rofi_command="rofi -theme $dir/monitor_menu.rasi"
 laptop=""
 single_external=""
 double_external=""
-laptop_and_single_external=" "
-laptop_and_monitors=" "
+laptop_and_single_external="   "
+laptop_and_monitors="   "
 
 # Variable passed to rofi
 options="$laptop\n$single_external\n$double_external\n$laptop_and_single_external\n$laptop_and_monitors"

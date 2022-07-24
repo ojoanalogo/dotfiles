@@ -2,7 +2,7 @@
 
 configuration {
     show-icons: false;
-    display-drun: "Power";
+    display-drun: "Layout";
     drun-display-format: "{name}";
     disable-history: false;
     click-to-exit: true;
@@ -13,7 +13,7 @@ window {
     transparency: "real";
     text-color: @foreground;
     border-radius: 8px;
-    width: 80px;
+    width: 100px;
     x-offset: -30px;
     y-offset: 0px;
 }
@@ -46,7 +46,7 @@ element {
 element-text {
     background-color: inherit;
     text-color: inherit;
-    font: "Terminus 26";
+    font: "Symbols Nerd Font 14";
     expand: true;
     horizontal-align: 0.5;
     vertical-align: 0.5;

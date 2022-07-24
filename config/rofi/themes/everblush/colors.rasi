@@ -1,0 +1,10 @@
+* {
+    background:  #141b1e;
+    blurBackground:  #141b1e80;
+    selected:  #232a2d;
+    selectedForeground: #dadada;
+    foreground:  #dadada;
+    accent:  #232a2d;
+    background-color: transparent;
+    text-color: @foreground;
+}

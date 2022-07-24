@@ -19,8 +19,8 @@ super + ctrl + d
   $HOME/.config/rofi/menus/open_windows
 
 # show ssh sesssions
-super + shift + d
-  $HOME/.config/rofi/menus/show_ssh_sessions
+#super + shift + ctrl + d
+#  $HOME/.config/rofi/menus/show_ssh_sessions
 
 # power-menu
 super + shift + e
@@ -33,6 +33,14 @@ super + shift + p
 # le emoji menu
 super + period
   $HOME/.config/rofi/menus/emojis
+
+# le sidebar
+super + shift + d
+  eww open sidebar
+
+# close sidebar
+super + shift + w
+  eww close sidebar
 
 # shortcuts
 #super + shift + F1

@@ -11,7 +11,7 @@ option5="福 "
 # options to be displyed
 options="$option0\n$option1\n$option2\n$option3\n$option4\n$option5"
 
-dir="$HOME/.config/rofi/themes/material"
+dir="$HOME/.config/rofi/themes/everblush"
 
 selected="$(echo -e "$options" | rofi -theme $dir/screenshot.rasi -lines 2 -dmenu)"
 case $selected in
