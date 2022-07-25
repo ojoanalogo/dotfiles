@@ -9,7 +9,7 @@
 SCREEN_CURRENT_PROFILE=$(cat $HOME/.current-layout)
 
 # launch bspwm manager notification
-notify-send "BSPWM" "Switched to $SCREEN_CURRENT_PROFILE profile"
+notify-send -u low "BSPWM" "Switched to $SCREEN_CURRENT_PROFILE profile"
 
 if [ "$SCREEN_CURRENT_PROFILE" == "docked-1" ]; then
   bspc monitor DP-1-4 -d 1 2 3 4 5

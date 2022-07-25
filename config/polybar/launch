@@ -31,4 +31,4 @@ elif [ "$screen" == "docked-4" ]; then
 else
   polybar -q laptop_single -c $DIR/config.ini &
 fi
-notify-send -i menu "Polybar" "Lauching $screen profile"
+notify-send -u low "Polybar" "Lauching $screen profile"

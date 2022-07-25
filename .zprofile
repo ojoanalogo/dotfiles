@@ -1,3 +1,2 @@
-# restore .screenLayout default value
-echo "laptop" > $HOME/.screenLayout
-
+# restore .current-layout default value
+echo "laptop" > $HOME/.current-layout

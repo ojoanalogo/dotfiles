@@ -1,0 +1,14 @@
+(defwindow system-tray
+  :geometry (geometry :x "0%"
+    :y "20%"
+    :width "20%"
+    :height "45%"
+  :anchor "center top")
+  (sys-tray))
+
+(defwindow calendar
+  :geometry (geometry :x "85%"
+    :y "4%"
+    :width "270px"
+  :height "70px")
+  (cal))

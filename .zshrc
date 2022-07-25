@@ -1,37 +1,36 @@
-source /usr/share/zsh/share/antigen.zsh
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle command-not-found
-antigen bundle sudo
-antigen theme spaceship-prompt/spaceship-prompt
-
-# Auto suggestions
-antigen bundle zsh-users/zsh-autosuggestions
-
-# Syntax highlighting bundle
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
+# if the init script doesn't exist
+if ! zgen saved; then
+  # specify plugins here
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/sudo
+  zgen oh-my-zsh plugins/command-not-found
+  # Auto suggestions
+  zgen load zsh-users/zsh-autosuggestions
+  # Syntax highlighting bundle
+  zgen load zsh-users/zsh-syntax-highlighting
+  # generate the init script from plugins above
+  zgen save
+fi
 
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 
 export PATH="/usr/local/bin:$PATH"
 
-alias slaptop="$HOME/Code/dotfiles/scripts/layouts/laptop"
-alias smonitor="$HOME/Code/dotfiles/scripts/layouts/monitor"
-alias smonitor2="$HOME/Code/dotfiles/scripts/layouts/double_monitor"
-alias smonitor3="$HOME/Code/dotfiles/scripts/layouts/triple_monitor"
-
 # fnm
-export PATH=$HOME/.fnm:$PATH
+export PATH="$PATH:$HOME/.fnm"
 eval "`fnm env`"
 
 # flutter
-export PATH="$PATH:`pwd`/flutter/bin"
+export PATH="$PATH:$HOME/flutter/bin"
 
-source $ZSH/oh-my-zsh.sh
+# aliases
+alias ls="lsd -a"
+alias shit="cowsay shit"
+
+# load starship prompt
+eval "$(starship init zsh)"

@@ -34,13 +34,9 @@ super + shift + p
 super + period
   $HOME/.config/rofi/menus/emojis
 
-# le sidebar
+# le sys tray
 super + shift + d
-  eww open sidebar
-
-# close sidebar
-super + shift + w
-  eww close sidebar
+  $HOME/.config/eww/scripts/openSysTray
 
 # shortcuts
 #super + shift + F1
