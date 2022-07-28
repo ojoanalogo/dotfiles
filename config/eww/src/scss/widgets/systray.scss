@@ -1,227 +1,243 @@
-.sys-tray-box {
+.dashboard-tray-box {
   background-color: $bg;
   border-radius: 20px;
-  padding: 2em;
+  .gauges {
+    padding: 1em;
+    .gauge-icon {
+      margin-top: 1.2em;
+      font-size: 40px;
+      font-family: "Symbols Nerd Font";
+    }
 
-  .first-row {
-    .sys-tray-box-left {
-      .network {
+    .gauge-text {
+      margin-top: -1.5em;
+      font-size: 10px;
+      font-family: "Terminus";
+    }
+
+    .cpu {
+      margin: 0.8em;
+      .cpu-progress {
         background-color: $contrastbg;
-        border-radius: 6px;
+        color: $blue;
+      }
+    }
 
-        .title {
-          color: $fgDim;
-          margin-left: 1em;
-          margin-top: 1em;
+    .disk {
+      margin: 0.8em;
+      .disk-progress {
+        background-color: $contrastbg;
+        color: $green;
+      }
+    }
+
+    .ram {
+      margin: 0.8em;
+      .ram-progress {
+        background-color: $contrastbg;
+        color: $magenta;
+      }
+    }
+  }
+
+  .tray {
+    padding: 2em;
+    .first-row {
+      .dashboard-tray-box-left {
+        .network {
+          background-color: $contrastbg;
+          border-radius: 6px;
+
+          .title {
+            color: $fgDim;
+            margin-left: 1em;
+            margin-top: 1em;
+          }
+
+          .ssid {
+            margin-left: 0em;
+            margin-bottom: 0.3em;
+            font-size: 24px;
+            font-weight: bolder;
+          }
         }
+        .date {
+          margin-top: 1em;
+          background-color: $contrastbg;
+          border-radius: 6px;
 
-        .ssid {
-          margin-left: 0em;
-          margin-bottom: 0.3em;
-          font-size: 24px;
-          font-weight: bolder;
+          .weekday {
+            color: $fgDim;
+            margin-top: 1em;
+            margin-left: 1em;
+          }
+
+          .monthday {
+            margin-left: 0em;
+            margin-bottom: 0.3em;
+            font-size: 24px;
+            font-weight: bold;
+          }
         }
       }
-      .date {
-        margin-top: 1em;
-        background-color: $contrastbg;
-        border-radius: 6px;
-
-        .weekday {
-          color: $fgDim;
-          margin-top: 1em;
-          margin-left: 1em;
+      .dashboard-tray-box-right {
+        .avatar {
+          background-size: 100px;
+          min-height: 100px;
+          min-width: 100px;
+          margin: 5px 0px 0px 0px;
+          border-radius: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
         }
-
-        .monthday {
-          margin-left: 0em;
-          margin-bottom: 0.3em;
+        .avatar-text {
+          margin-top: 1em;
           font-size: 24px;
           font-weight: bold;
         }
       }
     }
-    .sys-tray-box-right {
-      margin: 0.5em 0em 0em 2em;
-      .avatar {
-        padding: 5em;
-        border-radius: 50%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+
+    .second-row {
+      margin-top: 2em;
+
+      .music-player {
+        margin-top: 0em;
+        min-height: 140px;
+
+        .song-art {
+          background-color: $contrastbg;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 6px;
+
+          margin-right: 5px;
+          min-width: 310px;
+
+          .music-info {
+            border-radius: inherit;
+            background: linear-gradient(
+              to right,
+              rgba(16, 20, 21, 0.9),
+              transparent
+            );
+
+            padding-top: 0em;
+            padding-left: 1em;
+
+            .now-playing {
+              margin-bottom: -6px;
+            }
+            .song-title {
+              font-size: 16px;
+              font-weight: bolder;
+            }
+            .song-artist,
+            .song-position {
+              color: $fgDim;
+            }
+            .song-position {
+              margin-top: 4.3em;
+            }
+          }
+        }
+
+        .song-controls {
+          background-color: $contrastbg;
+          padding: 0em 1em;
+          margin-left: 24px;
+          border-radius: 10px;
+
+          button {
+            font-family: "Material Icons";
+            font-size: 24px;
+
+            &:hover {
+              color: $accent;
+            }
+          }
+        }
       }
     }
-  }
 
-  .second-row {
-    margin: 1em 0em 0em 0em;
-    .sys-tray-box-left {
-      .cpu {
-        .cpu-progress {
-          background-color: $contrastbg;
-          color: $blue;
+    .third-row {
+      margin-top: 2em;
 
-          .cpu-icon {
-            margin: 1em;
-            font-size: 40px;
-            font-family: "Symbols Nerd Font";
+      .system-info {
+        margin: 0em 1em 0em 0.7em;
+
+        .volume {
+          margin: 0.5em -1.5em;
+          .volume-icon {
+            margin: 0rem 1rem;
+            font-family: "Material Icons";
+            color: $green;
+            font-size: 26px;
+          }
+
+          scale trough {
+            background-color: $contrastbg;
+            border-radius: 10px;
+            min-height: 0.7em;
+            min-width: 24em;
+            margin: 0.5rem 0;
+          }
+
+          .volbar trough highlight {
+            background-image: linear-gradient(to right, #87c7a1, $green);
+            border-radius: 10px;
+          }
+        }
+        .brightness {
+          margin: 0.75em -1.5em;
+
+          .brightness-icon {
+            margin: 0rem 1rem;
+            color: $yellow;
+            font-size: 26px;
+          }
+
+          scale trough {
+            background-color: $contrastbg;
+            border-radius: 10px;
+            min-height: 0.7em;
+            min-width: 24em;
+            margin: 0.5rem 0;
+          }
+
+          .bribar trough highlight {
+            background-image: linear-gradient(to right, #de8f78, $yellow);
+            border-radius: 10px;
+          }
+        }
+        .mic {
+          margin: 0.5em -1.5em;
+
+          .mic-icon {
+            margin: 0rem 1rem;
+            font-family: "Material Icons";
             color: $blue;
+            font-size: 26px;
           }
-        }
-      }
-    }
 
-    .sys-tray-box-right {
-      .ram {
-        .ram-progress {
-          background-color: $contrastbg;
-          color: $red;
-
-          .ram-icon {
-            margin: 1em;
-            font-size: 40px;
-            font-family: "Symbols Nerd Font";
-            color: $red;
+          scale trough {
+            background-color: $contrastbg;
+            border-radius: 10px;
+            min-height: 0.7em;
+            min-width: 24em;
+            margin: 0.5rem 0;
           }
-        }
-      }
-    }
-  }
 
-  .third-row {
-
-    .music-player {
-      margin-top: 0em;
-      min-height: 140px;
-
-      .song-art {
-        background-color: $contrastbg;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: 6px;
-
-        margin-right: 5px;
-        min-width: 252px;
-
-        .music-info {
-          border-radius: inherit;
-          background: linear-gradient(
-            to right,
-            rgba(16, 20, 21, 0.9),
-            transparent
-          );
-
-          padding-top: 0em;
-          padding-left: 1em;
-
-          .now-playing {
-            margin-bottom: -6px;
+          .micbar trough highlight {
+            background-image: linear-gradient(
+              to right,
+              $blue-desaturated,
+              $blue
+            );
+            border-radius: 10px;
           }
-          .song-title {
-            font-size: 16px;
-            font-weight: bolder;
-          }
-          .song-artist,
-          .song-position {
-            color: $fgDim;
-          }
-          .song-position {
-            margin-top: 4.3em;
-          }
-        }
-      }
-
-      .song-controls {
-        background-color: $contrastbg;
-        padding: 0em 1em;
-        margin-left: 24px;
-        border-radius: 10px;
-
-        button {
-          font-family: "Material Icons";
-          font-size: 24px;
-
-          &:hover {
-            color: $accent;
-          }
-        }
-      }
-    }
-  }
-
-  .fourth-row {
-    margin-top: 2em;
-
-    .system-info {
-      margin: 0em 1em 0em 0.7em;
-
-      .volume {
-        margin: 0.5em -1.5em;
-
-        .volume-icon {
-          margin: 0rem 1rem;
-          font-family: "Material Icons";
-          color: $green;
-          font-size: 26px;
-        }
-
-        scale trough {
-          background-color: $contrastbg;
-          border-radius: 10px;
-          min-height: 0.7em;
-          min-width: 19em;
-          margin: 0.5rem 0;
-        }
-
-        .volbar trough highlight {
-          background-image: linear-gradient(to right, #87c7a1, $green);
-          border-radius: 10px;
-        }
-      }
-      .brightness {
-        margin: 0.75em -1.5em;
-
-        .brightness-icon {
-          margin: 0rem 1rem;
-          color: $yellow;
-          font-size: 26px;
-        }
-
-        scale trough {
-          background-color: $contrastbg;
-          border-radius: 10px;
-          min-height: 0.7em;
-          min-width: 19em;
-          margin: 0.5rem 0;
-        }
-
-        .bribar trough highlight {
-          background-image: linear-gradient(to right, #de8f78, $yellow);
-          border-radius: 10px;
-        }
-      }
-      .mic {
-        margin: 0.5em -1.5em;
-
-        .mic-icon {
-          margin: 0rem 1rem;
-          font-family: "Material Icons";
-          color: $blue;
-          font-size: 26px;
-        }
-
-        scale trough {
-          background-color: $contrastbg;
-          border-radius: 10px;
-          min-height: 0.7em;
-          min-width: 19em;
-          margin: 0.5rem 0;
-        }
-
-        .micbar trough highlight {
-          background-image: linear-gradient(to right, $blue-desaturated, $blue);
-          border-radius: 10px;
         }
       }
     }

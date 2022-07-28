@@ -1,14 +1,31 @@
-(defwindow system-tray
-  :geometry (geometry :x "0%"
-    :y "20%"
+(defwindow dashboard-tray
+  :geometry (geometry :x "-11%"
+    :y "25%"
     :width "20%"
-    :height "45%"
+    :height "570px"
   :anchor "center top")
-  (sys-tray))
+  (dashboard-tray))
+
+(defwindow dashboard-calendar
+  :geometry (geometry :x "12%"
+    :y "25%"
+    :width "20%"
+    :height "380px"
+  :anchor "center top")
+  (cal))
+
+(defwindow dashboard-gauges
+  :geometry (geometry :x "12%"
+    :y "62%"
+    :width "20%"
+    :height "170px"
+  :anchor "center top")
+  (dashboard-gauges))
 
 (defwindow calendar
-  :geometry (geometry :x "85%"
+  :geometry (geometry :x "-1%"
     :y "4%"
     :width "270px"
-  :height "70px")
+    :height "70px"
+  :anchor "right top")
   (cal))

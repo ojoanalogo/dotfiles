@@ -16,9 +16,11 @@ if ! zgen saved; then
   zgen save
 fi
 
+# declare zsh var
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 
+# export bin folder to path
 export PATH="/usr/local/bin:$PATH"
 
 # fnm
@@ -31,6 +33,8 @@ export PATH="$PATH:$HOME/flutter/bin"
 # aliases
 alias ls="lsd -a"
 alias shit="cowsay shit"
+alias vim="nvim"
+alias vi="nvim"
 
 # load starship prompt
 eval "$(starship init zsh)"

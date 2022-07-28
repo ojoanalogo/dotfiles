@@ -1,0 +1,36 @@
+#!/usr/bin/python
+import subprocess
+
+
+def getCalendarEvents():
+    # run comamnd and get output
+    cal = subprocess.check_output(
+        ["gcalcli", "agenda", "--tsv"]).decode("utf-8")
+    events = cal.split("\n")
+    # get only first 2 events
+    events = events[:2]
+    # remove empty strings in array
+    events = list(filter(None, events))
+
+    eventData = []
+    for event in events:
+        event = event.split("\t")
+        # first two positions are start, next two are end, last is summary
+        # ['2022-07-28\t19:30\t2022-07-28\t21:00\tSesión Grupal de Soft Skills para Devs: Julio, 2022']
+        eventData.append(
+            {
+                "startDate": event[0],
+                "startHour": event[1],
+                "endDate": event[2],
+                "endHour": event[3],
+                "summary": event[4]
+            }
+        )
+    # give a propeer format to the data
+    eventPrint = ""
+    for event in eventData:
+        eventPrint += event["startHour"] + " - " + event["endHour"] + ": " + event["summary"] + "\n"
+    print(eventPrint)
+
+
+events = getCalendarEvents()

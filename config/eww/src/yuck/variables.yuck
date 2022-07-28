@@ -10,6 +10,8 @@
 (defpoll monthday :interval "24h"
 "date '+%d %b'")
 
+(defpoll upcoming_events :interval "1h" "./scripts/getCalendarEvents")
+
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "10s"
 "./scripts/getUsedRam")

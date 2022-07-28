@@ -19,8 +19,8 @@ super + ctrl + d
   $HOME/.config/rofi/menus/open_windows
 
 # show ssh sesssions
-#super + shift + ctrl + d
-#  $HOME/.config/rofi/menus/show_ssh_sessions
+super + shift + ctrl + d
+  $HOME/.config/rofi/menus/show_ssh_sessions
 
 # power-menu
 super + shift + e
@@ -36,7 +36,7 @@ super + period
 
 # le sys tray
 super + shift + d
-  $HOME/.config/eww/scripts/openSysTray
+  $HOME/.config/eww/scripts/openDashboard
 
 # shortcuts
 #super + shift + F1

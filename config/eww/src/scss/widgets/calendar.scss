@@ -1,37 +1,51 @@
 .cal-box {
-    font-family: Iosevka;
-    background-color: $bg;
-    border-radius: 8px;
-    padding: 1rem 1rem .2rem;
+  font-family: Iosevka;
+  background-color: $bg;
+  border-radius: 8px;
+  padding: 1rem 1rem 0.2rem;
 
-    .cal {
-        &.highlight {
-            padding: 10rem;
-        }
-
-        padding: .8rem .25rem 0rem;
-        margin-left: 10px;
+  .upcoming-events {
+    padding: 1em;
+    margin-top: -1em;
+    .title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
+    .events {
+      font-size: 10px;
+      font-family: 'Terminus';
+      margin: 0em 0em 0.5em -0.2em;
+    }
+  }
+
+  .cal {
+    &.highlight {
+      padding: 10rem;
+    }
+    padding: 0.8rem 0.25rem 0rem;
+    margin-left: 10px;
+  }
 }
 
 calendar:selected {
-    color: $accent;
+  color: $accent;
 }
 
 calendar.header {
-	color: $cyan;
-	font-weight: bold;
+  color: $cyan;
+  font-weight: bold;
 }
 
 calendar.button {
-	color: $cyan;
+  color: $cyan;
 }
 
 calendar.highlight {
-	color: $green;
-	font-weight: bold;
+  color: $green;
+  font-weight: bold;
 }
 
 calendar:indeterminate {
-	color: rgba(205, 219, 249, 0.3);
+  color: rgba(205, 219, 249, 0.3);
 }
