@@ -5,12 +5,10 @@ import subprocess
 def getCalendarEvents():
     # run comamnd and get output
     cal = subprocess.check_output(
-        ["gcalcli", "agenda", "--tsv", "--nodeclined", "--details", "url"]).decode("utf-8")
+        ["gcalcli", "agenda", "today", "--tsv", "--nostarted", "--nodeclined", "--details", "url"]).decode("utf-8")
     events = cal.split("\n")
     # get only first 3 events
     events = events[:3]
-    # remove empty strings in array
-    events = list(filter(None, events))
 
     eventData = []
     for event in events:

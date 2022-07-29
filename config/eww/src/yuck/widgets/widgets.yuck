@@ -5,9 +5,9 @@
       (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) > 0}
         (label :wrap "true" :halign "start"  :class "title" :text "📅 Upcoming events (${arraylength(agenda)})")
         (for entry in agenda
-          (eventbox :onclick "notify-send -u low -i calendar \"Calendar\" \"Opening calendar\" && xdg-open ${entry.url}"
-            (box :wrap "true" :class "events" :orientation "h" :space-evenly "false"
-              (label :wrap "true" :text "✨ ")
+          (eventbox :cursor "pointer" :onclick "xdg-open ${entry.url}"
+            (box :wrap "true" :class "event" :orientation "h" :space-evenly "false"
+              (label :wrap "true" :text "🕖 ")
               (label :wrap "true" :class "time" :text "${entry.startHour} - ")
               (label :wrap "true" :class "time" :text "${entry.endHour} ")
               (label :wrap "true" :text "${entry.summary}")
@@ -16,7 +16,7 @@
         )
       )
       (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) == 0}
-        (label :wrap "true" :class "events" :text "Nothing to do today 🌊")
+        (label :wrap "true" :class "event" :text "Nothing to do today 🌊")
       )
     )
   )

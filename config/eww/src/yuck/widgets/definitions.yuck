@@ -10,7 +10,7 @@
   :geometry (geometry :x "12%"
     :y "25%"
     :width "20%"
-    :height "400px"
+    :height "380px"
   :anchor "center top")
   (cal))
 
