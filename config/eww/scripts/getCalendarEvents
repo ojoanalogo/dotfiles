@@ -5,10 +5,10 @@ import subprocess
 def getCalendarEvents():
     # run comamnd and get output
     cal = subprocess.check_output(
-        ["gcalcli", "agenda", "--tsv"]).decode("utf-8")
+        ["gcalcli", "agenda", "--tsv", "--nodeclined", "--details", "url"]).decode("utf-8")
     events = cal.split("\n")
-    # get only first 2 events
-    events = events[:2]
+    # get only first 3 events
+    events = events[:3]
     # remove empty strings in array
     events = list(filter(None, events))
 
@@ -23,14 +23,20 @@ def getCalendarEvents():
                 "startHour": event[1],
                 "endDate": event[2],
                 "endHour": event[3],
-                "summary": event[4]
+                "url": event[4],
+                "summary": event[6],
+                "formattedEvent": event[1] + " - " + event[3] + ": " + event[6]
             }
         )
-    # give a propeer format to the data
-    eventPrint = ""
-    for event in eventData:
-        eventPrint += event["startHour"] + " - " + event["endHour"] + ": " + event["summary"] + "\n"
-    print(eventPrint)
 
+    # return event data as json
+    return eventData
 
 events = getCalendarEvents()
+
+# convert array to json
+import json
+
+res = json.dumps(events)
+
+print(res)

@@ -2,9 +2,21 @@
   (box :class "cal-box" :orientation "v" :space-evenly "false"
     (calendar :class "cal" :day calendar_day :month calendar_month :year calendar_year)
     (box :class "upcoming-events" :orientation "v" :space-evenly "false"
-      (box :orientation "v" :space-evenly "false"
-        (label :wrap "true" :halign "start"  :class "title" :text "📅 Upcoming events")
-        (label :wrap "true" :valign "center" :halign "start" :class "events" :text "${upcoming_events}")
+      (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) > 0}
+        (label :wrap "true" :halign "start"  :class "title" :text "📅 Upcoming events (${arraylength(agenda)})")
+        (for entry in agenda
+          (eventbox :onclick "notify-send -u low -i calendar \"Calendar\" \"Opening calendar\" && xdg-open ${entry.url}"
+            (box :wrap "true" :class "events" :orientation "h" :space-evenly "false"
+              (label :wrap "true" :text "✨ ")
+              (label :wrap "true" :class "time" :text "${entry.startHour} - ")
+              (label :wrap "true" :class "time" :text "${entry.endHour} ")
+              (label :wrap "true" :text "${entry.summary}")
+            )
+          )
+        )
+      )
+      (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) == 0}
+        (label :wrap "true" :class "events" :text "Nothing to do today 🌊")
       )
     )
   )

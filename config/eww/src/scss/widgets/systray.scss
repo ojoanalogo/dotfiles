@@ -1,16 +1,16 @@
 .dashboard-tray-box {
   background-color: $bg;
-  border-radius: 20px;
+  border-radius: 8px;
   .gauges {
     padding: 1em;
     .gauge-icon {
-      margin-top: 1.2em;
+      margin-top: 1em;
       font-size: 40px;
       font-family: "Symbols Nerd Font";
     }
 
     .gauge-text {
-      margin-top: -1.5em;
+      margin-top: 0.5em;
       font-size: 10px;
       font-family: "Terminus";
     }
