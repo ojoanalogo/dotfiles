@@ -18,7 +18,7 @@ def getCurrentCalendarEvent():
         "endDate": event[2],
         "endHour": event[3],
         "url": event[4],
-        "summary": event[6],
+        "summary": event[6].split('\n')[0],
         "formattedEvent": event[1] + " - " + event[3] + ": " + event[6]
     }
 

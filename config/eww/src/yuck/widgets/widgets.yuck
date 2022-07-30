@@ -1,9 +1,14 @@
 (defwidget cal []
   (box :class "cal-box" :orientation "v" :space-evenly "false"
     (calendar :class "cal" :day calendar_day :month calendar_month :year calendar_year)
-    (box :class "upcoming-events" :orientation "v" :space-evenly "false"
-      (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) > 0}
-        (label :wrap "true" :halign "start"  :class "title" :text "📅 Upcoming events (${arraylength(agenda)})")
+    (box :orientation "v" :space-evenly "false" :class "upcoming-events"
+      (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) >= 1}
+        (box :wrap "true" :orientation "h" :space-evenly "false"
+          (label :hexpand "true" :halign "start" :wrap "true" :class "title" :text "📅 Upcoming events")
+          (eventbox :halign "end" :tooltip "Go to calendar" :cursor "pointer" :onclick "xdg-open https://calendar.google.com"
+            (label :wrap "true" :class "add" :text "")
+          )
+        )
         (for entry in agenda
           (eventbox :cursor "pointer" :onclick "xdg-open ${entry.url}"
             (box :wrap "true" :class "event" :orientation "h" :space-evenly "false"
@@ -15,7 +20,7 @@
           )
         )
       )
-      (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) == 0}
+      (box :halign "center" :valign "center" :orientation "h" :visible {arraylength(agenda) == 0}
         (label :wrap "true" :class "event" :text "Nothing to do today 🌊")
       )
     )
@@ -69,9 +74,24 @@
 )
 
 
+(defwidget dashboard-apps []
+  (box :class "dashboard-tray-box" :orientation "v" :space-evenly "true"
+    (box :class "apps" :orientation "v" :space-evenly "true"
+      (for app in apps
+        (eventbox :cursor "pointer" :onclick "${app.action}"
+          (box :tooltip "${app.name}" :class "block" :orientation "h" :space-evenly "false"
+            (label :class "icon" :text "${app.icon}")
+          )
+        )
+      )
+    )
+  )
+)
+
+
 (defwidget dashboard-tray []
   (box :class "dashboard-tray-box" :orientation "v"
-    (box :class "tray" :orientation "v" :space-evenly "true"
+    (box :class "tray" :orientation "v" :space-evenly "false"
       (box :class "first-row" :orientation "h"
         (box :class "dashboard-tray-box-left" :orientation "v" :space-evenly "true"
           (box :class "network" :orientation "v" :space-evenly "false"
@@ -93,8 +113,11 @@
             :class "avatar" :orientation "h" :halign "center" :style "background-image: url('/home/mxarc/Pictures/Yoplay-BN.png');" :space-evenly "false"
           )
           (label :class "avatar-text" :text "Hello ${username}!")
+          (box :class "happening-now" :tooltip "Current event" :space-evenly "false" :orientation "v" :wrap "false"
+            (label :limit-width "16" :wrap "false" :text "${current_event.summary}")
+            (label :wrap "false" :class "date" :text "(${current_event.startHour}) - (${current_event.endHour})")
+          )
         )
-        
       )
       
       (box :class "second-row" :orientation "h"

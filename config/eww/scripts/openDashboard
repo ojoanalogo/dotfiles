@@ -9,10 +9,11 @@ run() {
     ${EWW_BIN} open dashboard-tray
     ${EWW_BIN} open dashboard-gauges
     ${EWW_BIN} open dashboard-calendar
+    ${EWW_BIN} open dashboard-apps
 }
 
 # Run eww daemon if not running
-if [[ ! `pidof eww` ]]; then
+if [[ ! $(pidof eww) ]]; then
     ${EWW_BIN} daemon
     sleep 1
 fi
@@ -25,5 +26,6 @@ else
     ${EWW_BIN} close dashboard-tray
     ${EWW_BIN} close dashboard-gauges
     ${EWW_BIN} close dashboard-calendar
+    ${EWW_BIN} close dashboard-apps
     rm "$LOCK_FILE"
 fi

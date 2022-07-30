@@ -1,0 +1,18 @@
+[
+  { "name": "Telegram", "icon": "切", "action": "telegram-desktop" },
+  { "name": "Mail", "icon": "", "action": "xdg-open https://gmail.com" },
+  { "name": "Keep", "icon": "ﯚ", "action": "xdg-open https://keep.google.com" },
+  { "name": "GitHub", "icon": "", "action": "xdg-open https://github.com" },
+  { "name": "Reddit", "icon": "樓", "action": "xdg-open https://reddit.com" },
+  { "name": "Terminal", "icon": "", "action": "alacritty" },
+  {
+    "name": "Monitor layouts",
+    "icon": "",
+    "action": "$HOME/.config/rofi/menus/monitor_layouts"
+  },
+  {
+    "name": "Power settings",
+    "icon": "",
+    "action": "$HOME/.config/rofi/menus/power_menu"
+  }
+]

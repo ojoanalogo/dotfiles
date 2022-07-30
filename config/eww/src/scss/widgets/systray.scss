@@ -40,6 +40,25 @@
     }
   }
 
+  .apps {
+    padding: 1em;
+    margin-top: -1em;
+    .block {
+      background-color: $contrastbg;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 1em;
+      .icon {
+        font-family: "Symbols Nerd Font";
+        font-size: 24px;
+      }
+      .text {
+        font-family: "Terminus";
+        font-size: 10px;
+      }
+    }
+  }
+
   .tray {
     padding: 2em;
     .first-row {
@@ -92,9 +111,16 @@
           background-position: center;
         }
         .avatar-text {
-          margin-top: 1em;
-          font-size: 24px;
+          margin-top: 0.4em;
+          font-size: 22px;
           font-weight: bold;
+        }
+        .happening-now {
+          font-size: 10px;
+          font-family: "Terminus";
+          .date {
+            color: $cyan;
+          }
         }
       }
     }
@@ -164,10 +190,8 @@
 
     .third-row {
       margin-top: 2em;
-
       .system-info {
-        margin: 0em 1em 0em 0.7em;
-
+        margin: 0em 1em 0em 0em;
         .volume {
           margin: 0.5em -1.5em;
           .volume-icon {

@@ -1,5 +1,5 @@
 .cal-box {
-  font-family: Iosevka;
+  font-family: 'Iosevka';
   background-color: $bg;
   border-radius: 8px;
   padding: 1rem 1rem 0.2rem;
@@ -11,6 +11,11 @@
       font-size: 1rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
+    }
+    .add {
+      font-size: 20px;
+      margin-top: -8px;
+      font-family: "Symbols Nerd Font";
     }
     .event {
       font-size: 10px;
