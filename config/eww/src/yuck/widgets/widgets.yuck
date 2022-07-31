@@ -21,7 +21,7 @@
         )
       )
       (box :halign "center" :valign "center" :orientation "h" :visible {arraylength(agenda) == 0}
-        (label :wrap "true" :class "event" :text "Nothing to do today 🌊")
+        (label :wrap "true" :class "nothing" :text "Nothing to do today 🌊")
       )
     )
   )
