@@ -16,10 +16,10 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    # history = ctrl+grave
 
     # Context menu.
-    context = ctrl+shift+grave
+    # context = ctrl+shift+grave
 
     ### Display ###
 
@@ -49,7 +49,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 25
+    transparency = 20
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -57,14 +57,17 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 25
 
     # Horizontal padding.
     horizontal_padding = 8
 
+    # The distance in pixels from the text to the icon (or vice versa) in the horizontal axis.
+    text_icon_padding = 16
+
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
     frame_color = "#000000"
@@ -135,6 +138,9 @@
     # Possible values are "left", "center" and "right".
     alignment = left
 
+    # Defines how the text and icon should be aligned vertically within the notification. If icons are disabled, this option has no effect.
+    vertical_alignment = center
+
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
@@ -166,7 +172,7 @@
     icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 24
+    max_icon_size = 40
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/pixmaps/
@@ -186,7 +192,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/microsoft-edge-stable
+    browser = /usr/bin/google-chrome-stable
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -228,6 +234,11 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
+
+    ### geometry
+    width = 300
+    height = 100
+    offset = 20x50
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.

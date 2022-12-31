@@ -17,3 +17,6 @@ disabled = true
 
 [gcloud]
 disabled = true
+
+[ruby]
+disabled = true

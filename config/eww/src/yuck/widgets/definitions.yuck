@@ -1,24 +1,17 @@
-(defwindow dashboard-tray
-  :geometry (geometry :x "-280"
-    :y "280"
-    :width "20%"
-    :height "570px"
-  :anchor "center top")
-  (dashboard-tray))
+
 
 (defwindow dashboard-apps
   :geometry (geometry :x "415"
     :y "280"
     :height "570px"
   :anchor "center top")
-  (dashboard-apps)
-)
+  (dashboard-apps))
 
 (defwindow dashboard-calendar
   :geometry (geometry :x "160"
     :y "280"
     :width "20%"
-    :height "380px"
+    :height "200px"
   :anchor "center top")
   (cal))
 
@@ -30,10 +23,10 @@
   :anchor "center top")
   (dashboard-gauges))
 
+
 (defwindow calendar
-  :geometry (geometry :x "-1%"
-    :y "4%"
+  :geometry (geometry :x "-2%"
+    :y "-5%"
     :width "270px"
-    :height "400px"
-  :anchor "right top")
+  :anchor "right bottom")
   (cal))

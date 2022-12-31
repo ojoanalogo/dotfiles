@@ -8,11 +8,11 @@ configuration {
     drun-display-format: "{name}";
     disable-history: false;
     sidebar-mode: false;
+    terminal: "alacritty";
 }
 
 window {
     transparency: "real";
-    background-color: @blurBackground;
     text-color: @foreground;
     border-radius: 8px;
     width: 35%;
@@ -74,6 +74,7 @@ element {
     orientation: vertical;
     border-radius: 0%;
     padding: 2% 0% 2% 0%;
+    cursor: pointer;
 }
 
 element-icon {
@@ -83,6 +84,7 @@ element-icon {
     vertical-align: 0.5;
     size: 40px;
     border: 0px;
+    cursor: pointer;
 }
 
 element-text {
@@ -91,18 +93,19 @@ element-text {
     expand: true;
     horizontal-align: 0.5;
     margin: 1% 0% 0% 0%;
+    cursor: pointer;
 }
 
 element-text selected {
-    background-color: @selected;
+    background-color: transparent;
 }
 
 element-icon selected {
-    background-color: @selected;
+    background-color: transparent;
 }
 
 element selected {
-    background-color: @selected;
+    background-color: @selectedAlt;
     text-color: @selectedForeground;
     border: 0% 0% 0% 0%;
     border-radius: 5px;
@@ -111,4 +114,5 @@ element selected {
 
 error-message {
     padding: 1em;
+    background-color: @background;
 }

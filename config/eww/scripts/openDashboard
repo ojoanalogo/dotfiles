@@ -8,7 +8,6 @@ EWW_BIN="/usr/bin/eww"
 run() {
     ${EWW_BIN} open dashboard-tray
     ${EWW_BIN} open dashboard-gauges
-    ${EWW_BIN} open dashboard-calendar
     ${EWW_BIN} open dashboard-apps
 }
 
@@ -25,7 +24,6 @@ if [[ ! -f "$LOCK_FILE" ]]; then
 else
     ${EWW_BIN} close dashboard-tray
     ${EWW_BIN} close dashboard-gauges
-    ${EWW_BIN} close dashboard-calendar
     ${EWW_BIN} close dashboard-apps
     rm "$LOCK_FILE"
 fi

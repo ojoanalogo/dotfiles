@@ -1,78 +1,9 @@
+
 (defwidget cal []
   (box :class "cal-box" :orientation "v" :space-evenly "false"
     (calendar :class "cal" :day calendar_day :month calendar_month :year calendar_year)
-    (box :orientation "v" :space-evenly "false" :class "upcoming-events"
-      (box :orientation "v" :space-evenly "false" :visible {arraylength(agenda) >= 1}
-        (box :wrap "true" :orientation "h" :space-evenly "false"
-          (label :hexpand "true" :halign "start" :wrap "true" :class "title" :text "📅 Upcoming events")
-          (eventbox :halign "end" :tooltip "Go to calendar" :cursor "pointer" :onclick "xdg-open https://calendar.google.com"
-            (label :wrap "true" :class "add" :text "")
-          )
-        )
-        (for entry in agenda
-          (eventbox :cursor "pointer" :onclick "xdg-open ${entry.url}"
-            (box :wrap "true" :class "event" :orientation "h" :space-evenly "false"
-              (label :wrap "true" :text "🕖 ")
-              (label :wrap "true" :class "time" :text "${entry.startHour} - ")
-              (label :wrap "true" :class "time" :text "${entry.endHour} ")
-              (label :wrap "true" :text "${entry.summary}")
-            )
-          )
-        )
-      )
-      (box :halign "center" :valign "center" :orientation "h" :visible {arraylength(agenda) == 0}
-        (label :wrap "true" :class "nothing" :text "Nothing to do today 🌊")
-      )
-    )
   )
 )
-
-
-(defwidget dashboard-gauges []
-  (box :class "dashboard-tray-box" :orientation "h" :space-evenly "true"
-    (box :class "gauges" :orientation "h" :space-evenly "true"
-      (box :class "cpu" :orientation "v"
-        (circular-progress :class "cpu-progress"
-          :value {EWW_CPU.avg}
-          :thickness 6
-          :clockwise "true"
-          :tooltip "Used CPU: ${round(EWW_CPU.avg, 0)}%"
-          ; :onchange "amixer -D pulse sset Master {}%"
-          (box :orientation "v"
-            (label :class "gauge-icon" :text "")
-            (label :class "gauge-text" :text "${round(EWW_CPU.avg, 0)}%")
-          )
-        )
-      )
-      (box :class "disk" :orientation "v"
-        (circular-progress :class "disk-progress"
-          :value "${round(EWW_DISK["/"].used_perc, 0)}"
-          :thickness 6
-          :clockwise "true"
-          :tooltip "Used Disk: ${round(EWW_DISK["/"].used_perc, 0)}%"
-          (box :orientation "v"
-            (label :class "gauge-icon" :text "")
-            (label :class "gauge-text" :text "${round(EWW_DISK["/"].used_perc, 0)}%")
-          )
-        )
-      )
-      (box :class "ram" :orientation "v"
-        (circular-progress :class "ram-progress"
-          :value {EWW_RAM.used_mem_perc}
-          :thickness 6
-          :clockwise "true"
-          :tooltip "Used RAM: ${round(EWW_RAM.used_mem_perc, 0)}%"
-          ; :onchange "amixer -D pulse sset Master {}%"
-          (box :orientation "v"
-            (label :class "gauge-icon" :text "")
-            (label :class "gauge-text" :text "${round(EWW_RAM.used_mem_perc, 0)}%")
-          )
-        )
-      )
-    )
-  )
-)
-
 
 (defwidget dashboard-apps []
   (box :class "dashboard-tray-box" :orientation "v" :space-evenly "true"
@@ -88,6 +19,50 @@
   )
 )
 
+(defwidget dashboard-gauges []
+  (box :class "dashboard-tray-box" :orientation "h" :space-evenly "true"
+    (box :class "gauges" :orientation "h" :space-evenly "true"
+      (box :class "cpu" :orientation "v"
+        (circular-progress :class "cpu-progress"
+          :value {EWW_CPU.avg}
+          :thickness 8
+          :clockwise "true"
+          :tooltip "Used CPU: ${round(EWW_CPU.avg, 0)}%"
+          ; :onchange "amixer -D pulse sset Master {}%"
+          (box :orientation "v"
+            (label :class "gauge-icon" :text "")
+            (label :class "gauge-text" :text "${round(EWW_CPU.avg, 0)}%")
+          )
+        )
+      )
+      (box :class "disk" :orientation "v"
+        (circular-progress :class "disk-progress"
+          :value "${round(EWW_DISK["/"].used_perc, 0)}"
+          :thickness 8
+          :clockwise "true"
+          :tooltip "Used Disk: ${round(EWW_DISK["/"].used_perc, 0)}%"
+          (box :orientation "v"
+            (label :class "gauge-icon" :text "")
+            (label :class "gauge-text" :text "${round(EWW_DISK["/"].used_perc, 0)}%")
+          )
+        )
+      )
+      (box :class "ram" :orientation "v"
+        (circular-progress :class "ram-progress"
+          :value {EWW_RAM.used_mem_perc}
+          :thickness 8
+          :clockwise "true"
+          :tooltip "Used RAM: ${round(EWW_RAM.used_mem_perc, 0)}%"
+          ; :onchange "amixer -D pulse sset Master {}%"
+          (box :orientation "v"
+            (label :class "gauge-icon" :text "")
+            (label :class "gauge-text" :text "${round(EWW_RAM.used_mem_perc, 0)}%")
+          )
+        )
+      )
+    )
+  )
+)
 
 (defwidget dashboard-tray []
   (box :class "dashboard-tray-box" :orientation "v"
@@ -110,13 +85,9 @@
         
         (box :class "dashboard-tray-box-right" :orientation "v" :space-evenly "false"
           (box :tooltip "Hello ${username}!"
-            :class "avatar" :orientation "h" :halign "center" :style "background-image: url('/home/mxarc/Pictures/Yoplay-BN.png');" :space-evenly "false"
+            :class "avatar" :orientation "h" :halign "center" :style "background-image: url('/home/mxarc/Pictures/yop.jpg');" :space-evenly "false"
           )
           (label :class "avatar-text" :text "Hello ${username}!")
-          (box :class "happening-now" :tooltip "Current event" :space-evenly "false" :orientation "v" :wrap "false"
-            (label :limit-width "16" :wrap "false" :text "${current_event.summary}")
-            (label :wrap "false" :class "date" :text "(${current_event.startHour}) - (${current_event.endHour})")
-          )
         )
       )
       

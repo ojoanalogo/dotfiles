@@ -1,6 +1,24 @@
-;; NOTE: This is only for 1366x768 resolution! Use at your own risk.
-
 (include "./src/yuck/variables.yuck")
-
-(include "./src/yuck/widgets/definitions.yuck")
 (include "./src/yuck/widgets/widgets.yuck")
+
+(defwindow calendar
+  :geometry (geometry :x "-30"
+    :y "40"
+    :width "270px"
+  :anchor "right top")
+  (cal))
+
+(defwindow dashboard-tray
+  :geometry (geometry :x "-45"
+    :y "280"
+    :width "20%"
+    :height "570px"
+  :anchor "center top")
+  (dashboard-tray))
+
+(defwindow dashboard-apps
+  :geometry (geometry :x "250"
+    :y "280"
+    :height "570px"
+  :anchor "center top")
+  (dashboard-apps))

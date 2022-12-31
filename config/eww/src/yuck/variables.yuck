@@ -13,11 +13,6 @@
 ; APPS
 (defpoll apps :interval "3m" "cat ./apps.json")
 
-;; CALENDAR VARS
-(defpoll agenda :interval "3m" "./scripts/getCalendarEvents")
-(defpoll current_event :interval "3m" "./scripts/getCurrentEvent")
-
-
 ;;  SYSTEM INFO VARS
 (defpoll used_ram :interval "10s"
 "./scripts/getUsedRam")

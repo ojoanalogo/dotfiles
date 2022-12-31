@@ -31,5 +31,10 @@ xsetroot -cursor_name left_ptr &
 if [[ ! $(pidof udisksd) ]]; then
   udiskie --tray &
 fi
+# Plank dock
+#if [[ ! $(pidof plank) ]]; then
+#  plank &
+#fi
+
 # Low battery notifier
 $HOME/Code/dotfiles/scripts/low_bat_notifier &

@@ -1,7 +1,8 @@
 * {
     background:  #141b1e;
-    blurBackground:  #141b1e80;
+    blurBackground:  #141b1ebf;
     selected:  #232a2d;
+    selectedAlt: #b3b9b833;
     selectedForeground: #dadada;
     foreground:  #dadada;
     accent:  #232a2d;

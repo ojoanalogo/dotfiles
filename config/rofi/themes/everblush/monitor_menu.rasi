@@ -21,7 +21,7 @@ window {
 listview {
     background-color: @background;
     columns: 1;
-    lines: 5;
+    lines: 6;
     spacing: 10px;
     cycle: true;
     dynamic: true;
@@ -49,7 +49,6 @@ element-text {
     font: "Symbols Nerd Font 14";
     expand: true;
     horizontal-align: 0.5;
-    vertical-align: 0.5;
     margin: 0px;
 }
 

@@ -24,3 +24,9 @@ Software used:
 - maim for screenshots
 
 No install script yet
+
+## Credits
+
+- Color scheme is Everblush: <https://github.com/Everblush>
+- Eww dashboard by @AlphaTechnolog: <https://github.com/AlphaTechnolog/eww-dotfiles>
+- Rofi menu - Colorful theme by @adi1090x <https://github.com/adi1090x/rofi>

@@ -9,7 +9,6 @@ configuration {
     location: 4;
 }
 
-
 window {
     transparency: "real";
     text-color: @foreground;
@@ -50,8 +49,8 @@ element-text {
     font: "Symbols Nerd Font 16";
     expand: true;
     horizontal-align: 0.5;
-    vertical-align: 0.5;
     margin: 0px;
+    cursor: pointer;
 }
 
 element selected {

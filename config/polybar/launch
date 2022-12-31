@@ -28,6 +28,8 @@ elif [ "$screen" == "docked-3" ]; then
 elif [ "$screen" == "docked-4" ]; then
   polybar -q main_screen -c $DIR/config.ini &
   polybar -q laptop_screen -c $DIR/config.ini &
+elif [ "$screen" == "docked-5" ]; then
+  polybar -q main_screen_2 -c $DIR/config.ini &
 else
   polybar -q laptop_single -c $DIR/config.ini &
 fi

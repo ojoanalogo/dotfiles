@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+echo "docked-1" > $HOME/.current-layout
+xrandr --output DP-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off \
+--output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output eDP-1-1 --off \
+--output VGA-1-1 --off --output DP-1-1 --off --output HDMI-1-1 --off &&\
+$HOME/Code/dotfiles/scripts/layouts/postswitch
+
+if [ $? -eq 1 ]; then
+    # notify about error on layout switch
+    notify-send -u critical "Screen" "Error on layout switch, check output"
+fi
