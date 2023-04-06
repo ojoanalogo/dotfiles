@@ -38,3 +38,8 @@ alias vi="nvim"
 
 # load starship prompt
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/mxarc/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
