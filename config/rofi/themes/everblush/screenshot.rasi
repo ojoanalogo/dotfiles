@@ -14,6 +14,8 @@ window {
     width: 100px;
     x-offset: -30px;
     y-offset: 0px;
+    border: 8px;
+    border-color: @accent;
 }
 
 listview {
@@ -34,26 +36,26 @@ mainbox {
 }
 
 element {
-    background-color: @background;
+    background-color: @inherit;
     text-color: @foreground;
     orientation: horizontal;
     border-radius: 0px;
-    padding: 12.5px 5px 10px 5px;
+    padding: 0;
 }
 
 element-text {
-    background-color: inherit;
-    text-color: inherit;
-    font: "Symbols Nerd Font 14";
-    expand: true;
+    background-color: @inherit;
+    text-color: @foreground;
+    font: "Symbols Nerd Font 15";
     horizontal-align: 0.5;
-    margin: 0px;
+    cursor: pointer;
+    padding: 20 0 10 -5;
 }
 
 element selected {
     background-color: @selected;
     text-color: @foreground;
     border: 0px 0px 0px 0px;
-    border-radius: 10px;
+    border-radius: 8;
     border-color: @background;
 }

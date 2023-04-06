@@ -7,13 +7,12 @@ rofi_command="rofi -theme $dir/monitor_menu.rasi"
 # Options
 laptop=""
 single_monitor=""
-single_monitor_2=" ²"
 double_monitor=""
 monitor_and_laptop="   "
 all_monitors_and_laptop="   "
 
 # Variable passed to rofi
-options="$laptop\n$single_monitor\n$single_monitor_2\n$double_monitor\n$monitor_and_laptop\n$all_monitors_and_laptop"
+options="$laptop\n$single_monitor\n$double_monitor\n$monitor_and_laptop\n$all_monitors_and_laptop"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Monitor layout" -dmenu -selected-row 0)"
 case $chosen in
@@ -22,9 +21,6 @@ $laptop)
     ;;
 $single_monitor)
     $HOME/Code/dotfiles/scripts/layouts/single_monitor
-    ;;
-$single_monitor_2)
-    $HOME/Code/dotfiles/scripts/layouts/single_monitor_2
     ;;
 $double_monitor)
     $HOME/Code/dotfiles/scripts/layouts/double_monitor

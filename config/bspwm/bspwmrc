@@ -12,19 +12,19 @@ SCREEN_CURRENT_PROFILE=$(cat $HOME/.current-layout)
 notify-send -u low "BSPWM" "Switched to $SCREEN_CURRENT_PROFILE profile"
 
 if [ "$SCREEN_CURRENT_PROFILE" == "docked-1" ]; then
-  bspc monitor DP-0 -d 1 2 3 4 5
+  bspc monitor DVI-I-3-2 -d 1 2 3 4 5
 elif [ "$SCREEN_CURRENT_PROFILE" == "docked-2" ]; then
-  bspc monitor DP-0 -d 1 2 3 4 5
-  bspc monitor DP-4 -d 1 2 3 4 5
+  bspc monitor DVI-I-3-2 -d 1 2 3 4 5
+  bspc monitor DVI-I-2-1 -d 1 2 3 4 5
 elif [ "$SCREEN_CURRENT_PROFILE" == "docked-3" ]; then
-  bspc monitor DP-0 -d 1 2 3 4 5
-  bspc monitor DP-4 -d 1 2 3 4 5
-  bspc monitor eDP-1-1 -d 1 2 3 4 5
+  bspc monitor DVI-I-3-2 -d 1 2 3 4 5
+  bspc monitor DVI-I-2-1 -d 1 2 3 4 5
+  bspc monitor eDP-1 -d 1 2 3 4 5
 elif [ "$SCREEN_CURRENT_PROFILE" == "docked-4" ]; then
-  bspc monitor DP-0 -d 1 2 3 4 5
-  bspc monitor eDP-1-1 -d 1 2 3 4 5
+  bspc monitor DVI-I-3-2 -d 1 2 3 4 5
+  bspc monitor eDP-1 -d 1 2 3 4 5
 else
-  bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8
+  bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8
 fi
 
 bspc config remove_disabled_monitors true
@@ -68,9 +68,9 @@ bspc rule -a Plank manage=on border=off locked=on focus=off follow=off
 ######################
 ### BSPWM coloring ###
 ######################
-bspc config presel_feedback_color "#6cbfbf"
+bspc config presel_feedback_color "#8ccf7e"
 bspc config normal_border_color "#141b1e"
-bspc config active_border_color "#141b1e"
+bspc config active_border_color "#232a2d"
 bspc config border_width 0
 
 # autostart scripts

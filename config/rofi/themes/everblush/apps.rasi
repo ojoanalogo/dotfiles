@@ -19,12 +19,14 @@ mainbox {
 }
 
 window {
-  width: 35%;
+  width: 45%;
+  border: 10px;
+  border-color: @accent;
 }
 
 inputbar {
   children: [ prompt, entry ];
-  background-color: @blurBackground;
+  background-color: @accent;
   text-color: @background;
   expand: false;
   padding: 10px;
@@ -32,11 +34,11 @@ inputbar {
 }
 
 prompt {
-  background-color: @blurBrackground;
+  background-color: @accent;
 }
 
 entry {
-  background-color: @blurBrackground;
+  background-color: @accent;
 }
 
 dummy {
@@ -45,9 +47,9 @@ dummy {
 
 listview {
   padding: 1em 2em 1em 2em;
-  columns: 1;
+  columns: 3;
   lines: 6;
-  background-color: @blurBackground;
+  background-color: @background;
 }
 
 element {
@@ -74,7 +76,7 @@ element-text {
 mode-switcher {
   enabled:  true;
   spacing:  20px;
-  background-color: @background;
+  background-color: @accent;
   text-color: @foreground;
   padding: 10px;
 }

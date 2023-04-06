@@ -1,0 +1,94 @@
+@import "./theme.rasi"
+
+configuration {
+  modi: "drun,filebrowser,window";
+  show-icons: true;
+  display-drun: "APPS";
+  display-run:  "RUN";
+  display-filebrowser:  "FILES";
+  display-window: "WINDOW";
+  drun-display-format:  "{name}";
+  window-format:  "{w} · {c} · {t}";
+}
+
+mainbox {
+  children: [hero, listview];
+  orientation: horizontal;
+  transparency: "real";
+  background-color: transparent;
+}
+
+window {
+  width: 35%;
+}
+
+hero {
+  children: [inputbar, dummy, mode-switcher];
+  /** background-image: url("~/.config/rofi/assets/Vulcanic.jpg", height); */
+  background-color: @background;
+  orientation:  vertical;
+  padding: 20px;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  background-color: @blurBackground;
+  text-color: @background;
+  expand: false;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+prompt {
+  background-color: @blurBrackground;
+}
+
+entry {
+  background-color: @blurBrackground;
+}
+
+dummy {
+  background-color: transparent;
+}
+
+listview {
+  columns: 1;
+  lines: 6;
+  background-color: @blurBackground;
+}
+
+element {
+  orientation: horizontal;
+  padding: 2% 0% 2% 0%;
+  background-color: transparent;
+}
+
+element-icon {
+  size: 35px;
+  margin: 0% 0% 0% 1%;
+  background-color: transparent;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  expand: true;
+  horizontal-align: 0;
+  margin: 0.8% 0% 0% 0.8%;
+  font: "Terminus 10";
+}
+
+mode-switcher {
+  enabled:  true;
+  spacing:  20px;
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+button {
+  padding:  10px;
+  border-radius:  10px;
+  background-color: @background;
+  text-color: inherit;
+  cursor: pointer;
+}

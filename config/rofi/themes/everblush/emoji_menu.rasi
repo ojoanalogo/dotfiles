@@ -9,6 +9,8 @@ window {
     location: center;
     x-offset: 0;
     y-offset: 0;
+    border: 10px;
+    border-color: @accent;
 }
 
 mainbox {

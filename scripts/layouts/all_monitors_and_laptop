@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 echo "docked-3" > $HOME/.current-layout
-xrandr --output DP-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off \
---output DP-2 --off --output DP-3 --off --output DP-4 --mode 1920x1080 --pos 3840x0 --rotate normal \
---output DP-5 --off --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output VGA-1-1 --off \
---output DP-1-1 --off --output HDMI-1-1 --off &&\
+
+xrandr \
+--output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --gamma 1.05 \
+--output VGA-1 --off \
+--output DP-1 --off \
+--output HDMI-1 --off \
+--output DVI-I-3-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --gamma 0.95 \
+--output DVI-I-2-1 --mode 1920x1080 --pos 3840x0 --rotate normal --gamma 0.9 &&\
 $HOME/Code/dotfiles/scripts/layouts/postswitch
 
 if [ $? -eq 1 ]; then
-    # notify about error on layout switch
-    notify-send -u critical "Screen" "Error on layout switch, check output"
+  # notify about error on layout switch
+  notify-send -u critical "Screen" "Error on layout switch, check output"
 fi
