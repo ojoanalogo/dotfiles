@@ -35,6 +35,14 @@ export PATH="$PATH:$HOME/sdks/flutter/bin"
 export PATH="$PATH:$HOME/.fnm"
 eval "`fnm env`"
 
+# pnpm
+export PNPM_HOME="/home/mxarc/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 # aliases
 alias ls="lsd"
 alias shit="cowsay shit"
@@ -48,13 +56,3 @@ alias rm="trash"
 
 # load starship prompt
 eval "$(starship init zsh)"
-
-# pnpm
-export PNPM_HOME="/home/mxarc/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-
