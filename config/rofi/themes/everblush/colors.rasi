@@ -1,11 +1,11 @@
 * {
-    background:  #141b1e;
-    blurBackground:  #141b1ebf;
+    background:  #101212;
+    blurBackground:  #101212bf;
     selected:  #232a2d;
     selectedAlt: #b3b9b833;
     selectedForeground: #dadada;
     foreground:  #dadada;
-    accent:  #232a2d;
+    accent:  #191F1F;
     background-color: transparent;
     text-color: @foreground;
 }

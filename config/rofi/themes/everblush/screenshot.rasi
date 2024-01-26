@@ -14,7 +14,7 @@ window {
     width: 100px;
     x-offset: -30px;
     y-offset: 0px;
-    border: 8px;
+    border: 4px;
     border-color: @accent;
 }
 

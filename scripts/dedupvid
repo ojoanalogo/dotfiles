@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Function to check if image file exists for a video file
+check_image_exists() {
+    local video_file="$1"
+    local image_file="${video_file%.*}.jpg" # Assuming JPEG image format, change if needed
+    local image_file_upper="${video_file%.*}.JPG"
+    if [ -f "$image_file" ] || [ -f "$image_file_upper" ]; then
+        return 0  # Image file exists
+    else
+        return 1  # Image file doesn't exist
+    fi
+}
+
+# Function to delete video files that have matching image files
+delete_videos_with_images() {
+    local folder_path="$1"
+    cd "$folder_path" || exit 1
+
+    shopt -s nocaseglob  # Enable case-insensitive globbing
+    for video_file in *.mp4 *.avi *.mkv *.mov # Add more video formats as needed
+    do
+        if check_image_exists "$video_file"; then
+            echo "Found matching image for $video_file. Deleting..."
+            rm "$video_file"
+            echo "Deleted $video_file" >> deletion_log.txt
+        fi
+    done
+    shopt -u nocaseglob  # Disable case-insensitive globbing
+}
+
+# Confirmation before executing the deletion process
+confirmation_prompt() {
+    read -p "Do you want to delete video files with matching images? (y/n): " answer
+    case "$answer" in
+        [Yy]* ) delete_videos_with_images "$1";;
+        [Nn]* ) echo "Operation aborted."; exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+}
+
+# Main script execution
+main() {
+    if [ "$1" = "--skip-confirmation" ]; then
+        delete_videos_with_images "$2"
+    else
+        confirmation_prompt "$1"
+    fi
+}
+
+# Entry point
+main "$@"

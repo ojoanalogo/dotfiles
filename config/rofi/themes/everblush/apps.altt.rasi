@@ -12,41 +12,33 @@ configuration {
 }
 
 mainbox {
-  children: [hero, listview];
-  orientation: horizontal;
+  children: [inputbar, mode-switcher,listview];
+  orientation: vertical;
   transparency: "real";
   background-color: transparent;
 }
 
 window {
   width: 50%;
-}
-
-hero {
-  children: [inputbar, dummy, mode-switcher];
-  background-image: url("~/.config/rofi/assets/bg.jpg", height);
-  background-color: @background;
-  orientation:  vertical;
-  padding: 20px;
-  width: 22%;
-  expand: false;
+  border: 10px;
+  border-color: @accent;
 }
 
 inputbar {
   children: [ prompt, entry ];
-  background-color: @blurBackground;
+  background-color: @accent;
   text-color: @background;
   expand: false;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 prompt {
-  background-color: @blurBrackground;
+  background-color: @accent;
 }
 
 entry {
-  background-color: @blurBrackground;
+  background-color: @accent;
 }
 
 dummy {
@@ -54,10 +46,10 @@ dummy {
 }
 
 listview {
-  columns: 2;
+  padding: 1em 2em 1em 2em;
+  columns: 4;
   lines: 6;
   background-color: @blurBackground;
-  expand: true;
 }
 
 element {
@@ -84,8 +76,9 @@ element-text {
 mode-switcher {
   enabled:  true;
   spacing:  20px;
-  background-color: transparent;
+  background-color: @accent;
   text-color: @foreground;
+  padding: 10px;
 }
 
 button {

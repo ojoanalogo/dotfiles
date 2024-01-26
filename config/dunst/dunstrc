@@ -49,7 +49,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 20
+    transparency = 60
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -238,7 +238,7 @@
     ### geometry
     width = 300
     height = 100
-    offset = 20x50
+    offset = 30x50
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.

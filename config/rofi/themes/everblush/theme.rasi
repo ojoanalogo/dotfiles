@@ -1,20 +1,20 @@
 @import "./colors.rasi"
 
 configuration {
-    font: "Terminus 8";
+    font: "Iosevka NFM 8";
     show-icons: true;
     icon-theme: "Papirus";
     display-drun: "";
     drun-display-format: "{name}";
     disable-history: false;
     sidebar-mode: false;
-    terminal: "alacritty";
+    terminal: "kitty";
 }
 
 window {
     transparency: "real";
     text-color: @foreground;
-    border-radius: 8px;
+    border-radius: 12px;
     width: 35%;
     location: center;
     x-offset: 0;
@@ -34,7 +34,7 @@ prompt {
     padding: 10px;
     background-color: @accent;
     text-color: @foreground;
-    font: "Terminus 12";
+    font: "Iosevka NFM 12";
 }
 
 entry {
@@ -45,7 +45,7 @@ entry {
     placeholder: "Search";
     padding: 10px;
     blink: true;
-    font: "Terminus 12";
+    font: "Iosevka NFM 10";
 }
 
 listview {

@@ -1,0 +1,134 @@
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Iosevka NF";
+  font-weight: 700;
+  font-size: 12px;
+  font-style: normal;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(11, 13, 14, 0.35);
+  color: #dadada;
+}
+
+#custom-updates,
+#custom-caffeine,
+#custom-weather,
+#custom-menu,
+#custom-wallpaper,
+#custom-spotify,
+#custom-proton-vpn,
+#keyboard-state,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#language,
+#network,
+#workspaces,
+#cpu,
+#memory,
+#tray,
+#keyboard-state,
+#backlight {
+  background: #101212;
+  color: #dadada;
+  padding: 4 12;
+  border-radius: 8px;
+  margin: 4 2;
+}
+
+#custom-menu {
+  margin-left: 5px;
+  margin-right: 0.1rem;
+  padding: 4 16;
+  border-radius: 8px;
+  background: #101212;
+}
+
+#workspaces {
+  background: transparent;
+  margin: 5px 0px;
+  padding: 8px 5px;
+  border-radius: 8px;
+  border: solid 0px #b3b9b8;
+  font-weight: normal;
+  font-style: normal;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  margin: 0px 3px;
+  border-radius: 16px;
+  color: #101212;
+  background-color: #101212;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+  color: #c47fd5;
+  background-color: #c47fd5;
+  border-radius: 16px;
+  min-width: 20px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background-color: #101212;
+  color: #101212;
+}
+
+#tray menu {
+  background-color: #101212;
+  color: #dadada;
+  border-radius: 8px 8px 8px 8px;
+}
+
+#custom-spotify {
+  color: #1db954;
+  padding-left: 16;
+  padding-right: 16;
+}
+
+#language {
+  color: #6cbfbf;
+}
+
+#custom-proton-vpn {
+  color: #c47fd5;
+}
+
+#custom-updates {
+  color: #f5c2e7;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+#custom-wallpaper {
+  color: #67b0e8;
+}
+
+#clock {
+  color: #dadada;
+}
+
+#network {
+  color: #f9e2af;
+}
+
+#pulseaudio {
+  color: #67b0e8;
+}
+
+#pulseaudio.microphone {
+  color: #cba6f7;
+}
+
+#cpu,
+#memory {
+  color: #b3b9b8;
+}

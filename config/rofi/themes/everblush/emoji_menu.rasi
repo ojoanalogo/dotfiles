@@ -5,7 +5,7 @@ window {
     background-color: @blurBackground;
     text-color: @foreground;
     border-radius: 8px;
-    width: 55%;
+    width: 18%;
     location: center;
     x-offset: 0;
     y-offset: 0;
@@ -31,18 +31,18 @@ prompt {
     padding: 10px;
     background-color: @accent;
     text-color: @foreground;
-    font: "Terminus 12";
+    font: "Iosevka NFM 12";
 }
 
 entry {
     background-color: @accent;
     text-color: @foreground;
     placeholder-color: @foreground;
-    expand: true;
+    expand: false;
     placeholder: "Search";
     padding: 10px;
     blink: true;
-    font: "Terminus 12";
+    font: "Iosevka NFM 12";
 }
 
 element-icon {
@@ -61,7 +61,7 @@ listview {
 }
 
 element {
-    padding: 20;
+    padding: 10;
     background-color: @background;
     text-color: @foreground;
     orientation: vertical;
@@ -72,8 +72,8 @@ element-text {
     background-color: inherit;
     text-color: inherit;
     font: "Terminus 10";
-    expand: true;
-    horizontal-align: 0;
+    expand: false;
+    horizontal-align: 0.5;
     vertical-align: 0.5;
     margin: 5px;
 }

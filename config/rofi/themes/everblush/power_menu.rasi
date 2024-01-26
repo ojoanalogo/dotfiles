@@ -12,11 +12,9 @@ configuration {
 window {
     transparency: "real";
     text-color: @foreground;
-    border-radius: 8px;
     width: 100px;
-    x-offset: -30px;
+    x-offset: -25px;
     y-offset: 0px;
-    border: 8px;
     border-color: @accent;
 }
 
@@ -35,6 +33,7 @@ mainbox {
     children: [ listview ];
     spacing: 10px;
     padding: 8px;
+    border-radius: 8px;
 }
 
 element {

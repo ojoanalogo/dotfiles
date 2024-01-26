@@ -1,7 +1,7 @@
 @import "./theme.rasi"
 
 configuration {
-    font: "Terminus 12";
+    font: "Iosevka NFM 12";
     show-icons: false;
 }
 

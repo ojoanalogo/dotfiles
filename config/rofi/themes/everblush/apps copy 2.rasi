@@ -19,7 +19,7 @@ mainbox {
 }
 
 window {
-  width: 50%;
+  width: 35%;
 }
 
 hero {
@@ -28,8 +28,6 @@ hero {
   background-color: @background;
   orientation:  vertical;
   padding: 20px;
-  width: 22%;
-  expand: false;
 }
 
 inputbar {
@@ -54,10 +52,9 @@ dummy {
 }
 
 listview {
-  columns: 2;
+  columns: 1;
   lines: 6;
   background-color: @blurBackground;
-  expand: true;
 }
 
 element {
