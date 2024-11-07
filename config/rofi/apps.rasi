@@ -1,0 +1,101 @@
+@import "./config.rasi"
+
+configuration {
+  modi: "drun,filebrowser,window";
+  show-icons: true;
+  display-drun: "APPS";
+  display-run:  "RUN";
+  display-filebrowser:  "FILES";
+  display-window: "WINDOW";
+  drun-display-format:  "{name}";
+  window-format:  "{w} · {c} · {t}";
+}
+
+window {
+  border: 0;
+  border-radius: 12;
+}
+
+mainbox {
+  children: [hero, listview];
+  orientation: horizontal;
+  transparency: "real";
+  border: 0;
+  background-color: transparent;
+}
+
+window {
+  width: 60%;
+}
+
+hero {
+  children: [inputbar, dummy, mode-switcher];
+  background-image: url("~/.config/rofi/assets/ag.jpg", height);
+  background-color: @background;
+  orientation:  vertical;
+  padding: 20px;
+  width: 22%;
+  expand: false;
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  background-color: @blurBackground;
+  expand: false;
+  padding: 10px;
+}
+
+prompt {
+  background-color: @blurBrackground;
+}
+
+entry {
+  background-color: @blurBrackground;
+}
+
+dummy {
+  background-color: transparent;
+}
+
+listview {
+  columns: 3;
+  lines: 6;
+  background-color: @blurBackground;
+  expand: true;
+}
+
+element {
+  orientation: horizontal;
+  padding: 2% 0% 2% 0%;
+  background-color: transparent;
+}
+
+element-icon {
+  size: 35px;
+  margin: 0% 0% 0% 1%;
+  background-color: transparent;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  expand: true;
+  horizontal-align: 0;
+  margin: 0.8% 0% 0% 0.8%;
+  font: "Iosevka NFM 10";
+}
+
+mode-switcher {
+  enabled:  true;
+  spacing:  20px;
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+button {
+  padding:  10px;
+  border-radius:  10px;
+  background-color: @background;
+  text-color: inherit;
+  cursor: pointer;
+}

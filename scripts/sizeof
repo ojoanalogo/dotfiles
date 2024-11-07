@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if the user provided a path as an argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <path_to_folder_or_file>"
+    exit 1
+fi
+
+# Get the size of the folder or file in kilobytes
+size_kb=$(du -k "$1" | awk '{print $1}')
+
+# Convert kilobytes to megabytes
+size_mb=$(awk "BEGIN {printf \"%.2f\", $size_kb / 1024}")
+
+# Print the size in both kilobytes and megabytes
+echo "Size in Kilobytes: $size_kb KB"
+echo "Size in Megabytes: $size_mb MB"

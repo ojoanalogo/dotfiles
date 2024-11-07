@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+dir="$HOME/.config/rofi"
+rofimoji --action copy --hidden-descriptions --selector-args="-theme $dir/emoji_menu.rasi"

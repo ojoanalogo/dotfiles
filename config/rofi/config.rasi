@@ -1,0 +1,123 @@
+@import "./colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+configuration {
+    font: "Iosevka NFM 8";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "";
+    drun-display-format: "{name}";
+    disable-history: false;
+    sidebar-mode: false;
+    terminal: "kitty";
+}
+
+window {
+    transparency: "real";
+    text-color: @foreground;
+    width: 35%;
+    location: center;
+    x-offset: 0;
+    y-offset: 0;
+    border-color: @white;
+    border: 1;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @accent;
+    text-color: @background;
+    expand: false;
+    padding: 10px;
+}
+
+prompt {
+    enabled: true;
+    padding: 10px;
+    background-color: @accent;
+    text-color: @foreground;
+    font: "Iosevka NFM 12";
+}
+
+entry {
+    background-color: @accent;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    expand: true;
+    placeholder: "Search";
+    padding: 10px;
+    blink: true;
+    font: "Iosevka NFM 10";
+}
+
+listview {
+    background-color: @background;
+    padding: 10px;
+    columns: 5;
+    lines: 4;
+    spacing: 0%;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+mainbox {
+    background-color: @background;
+    border: 0% 0% 0% 0%;
+    border-radius: 0% 0% 0% 0%;
+    children: [ inputbar, listview ];
+    spacing: 0%;
+}
+
+element {
+    background-color: @background;
+    text-color: @foreground;
+    orientation: vertical;
+    border-radius: 0%;
+    padding: 2% 0% 2% 0%;
+    cursor: pointer;
+}
+
+element-icon {
+    background-color: @background;
+    text-color: inherit;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    size: 40px;
+    border: 0px;
+    cursor: pointer;
+}
+
+element-text {
+    background-color: @background;
+    text-color: inherit;
+    expand: true;
+    horizontal-align: 0.5;
+    margin: 1% 0% 0% 0%;
+    cursor: pointer;
+}
+
+element-text selected {
+    background-color: transparent;
+}
+
+element-icon selected {
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @selected;
+    text-color: @selectedForeground;
+    border: 0% 0% 0% 0%;
+    border-radius: 5px;
+    border-color: @background;
+}
+
+error-message {
+    padding: 1em;
+    background-color: @background;
+}

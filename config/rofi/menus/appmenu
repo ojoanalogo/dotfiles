@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+dir="$HOME/.config/rofi"
+# open drun menu
+rofi -show drun -theme $dir/apps.rasi

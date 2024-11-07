@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# Check if exiftool, ffprobe, and file command are installed
+if ! command -v exiftool &> /dev/null || ! command -v ffprobe &> /dev/null || ! command -v file &> /dev/null; then
+  echo "exiftool, ffprobe, or file command is not installed. Please install them (e.g., sudo apt-get install exiftool ffmpeg file)"
+  exit 1
+fi
+
+# Function to set modification date from EXIF data for images
+set_image_modification_date() {
+  local file="$1"
+  exif_date=$(exiftool -s -s -s -d "%Y%m%d%H%M.%S" -DateTimeOriginal -s "$file")
+  if [ -n "$exif_date" ]; then
+    touch -t "$exif_date" "$file" >/dev/null 2>&1
+    echo "File modification date set to $exif_date for $file"
+  else
+    echo "Unable to extract date from EXIF data for $file"
+  fi
+}
+
+# Function to set modification date for video files using ffprobe
+set_video_modification_date() {
+  local file="$1"
+  video_date=$(ffprobe -v quiet -show_entries format_tags=creation_time -of default=noprint_wrappers=1:nokey=1 "$file" | cut -d'.' -f1)
+  if [ -n "$video_date" ]; then
+    # Adjust the date format obtained from ffprobe to YYYYMMDDHHMM.SS format
+    formatted_date=$(date -d "$video_date" "+%Y%m%d%H%M.%S")
+    if [ -n "$formatted_date" ]; then
+      touch -t "$formatted_date" "$file" >/dev/null 2>&1
+      echo "File modification date set to $formatted_date for $file"
+    else
+      echo "Unable to extract or convert video metadata date for $file"
+    fi
+  else
+    echo "Unable to extract date from video metadata for $file"
+  fi
+}
+
+# Function to process files in a folder
+process_folder() {
+  local folder_path="$1"
+  for file in "$folder_path"/*; do
+    if [ -f "$file" ]; then
+      mime_type=$(file -b --mime-type "$file")
+      case "$mime_type" in
+      image/*)
+        set_image_modification_date "$file"
+        ;;
+      video/*)
+        set_video_modification_date "$file"
+        ;;
+      *)
+        echo "File format not supported: $file"
+        ;;
+      esac
+    fi
+  done
+}
+
+# Check if filenames or folder name are provided as arguments
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <image_file1> <image_file2> ... OR $0 <video_file1> <video_file2> ... OR $0 <folder_path>"
+  exit 1
+fi
+
+# Check if the last argument is a folder
+if [ -d "${@: -1}" ]; then
+  folder_path="${@: -1}"
+  process_folder "$folder_path"
+else
+  # Process each file provided as an argument
+  for file in "$@"; do
+    if [ -f "$file" ]; then
+      mime_type=$(file -b --mime-type "$file")
+      case "$mime_type" in
+      image/*)
+        set_image_modification_date "$file"
+        ;;
+      video/*)
+        set_video_modification_date "$file"
+        ;;
+      *)
+        echo "File format not supported: $file"
+        ;;
+      esac
+    else
+      echo "$file is not a valid file."
+    fi
+  done
+fi

@@ -1,0 +1,11 @@
+@define-color background     #141b1e;
+@define-color background-alt #232a2d;
+@define-color foreground    #dadada;
+@define-color color1        #8ccf7e;
+@define-color color2        #f9e2af;
+@define-color color3        #67b0e8;
+@define-color color4        #c47fd5;
+
+
+@import 'themes/nova-dark/notifications.css';
+@import 'themes/nova-dark/central_control.css';

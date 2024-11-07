@@ -1,0 +1,19 @@
+@import "./config.rasi"
+
+configuration {
+    font: "Iosevka NFM 10";
+    show-icons: false;
+}
+
+window {
+    width: 360px;
+    padding: 16;
+    background-color: @background;
+}
+
+prompt {
+    enabled: true;
+    text-color: @foreground;
+    background-color: @background;
+}
+

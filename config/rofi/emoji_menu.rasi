@@ -1,0 +1,79 @@
+@import "./config.rasi"
+
+window {
+    transparency: "real";
+    background-color: @blurBackground;
+    text-color: @foreground;
+    border-radius: 8px;
+    width: 18%;
+    location: center;
+    x-offset: 0;
+    y-offset: 0;
+    border: 10px;
+    border-color: @accent;
+}
+
+mainbox {
+    background-color: @background;
+    children: [ inputbar, listview ];
+    spacing: 15px;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    background-color: @accent;
+    text-color: @background;
+    expand: false;
+}
+
+prompt {
+    enabled: true;
+    padding: 10px;
+    background-color: @accent;
+    text-color: @foreground;
+    font: "Iosevka NFM 12";
+}
+
+entry {
+    background-color: @accent;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    expand: false;
+    placeholder: "Search";
+    padding: 10px;
+    blink: true;
+    font: "Iosevka NFM 12";
+}
+
+element-icon {
+    enabled: false;
+}
+
+listview {
+    background-color: @background;
+    padding: 10px;
+    columns: 5;
+    lines: 6;
+    spacing: 0%;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    padding: 10;
+    background-color: @background;
+    text-color: @foreground;
+    orientation: vertical;
+    border-radius: 0%;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    font: "Terminus 10";
+    expand: false;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 5px;
+}

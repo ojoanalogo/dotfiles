@@ -1,0 +1,54 @@
+@import "./colors.rasi"
+
+* {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+configuration {
+    show-icons: false;
+    display-drun: "Power";
+    drun-display-format: "{name}";
+    disable-history: false;
+    click-to-exit: true;
+    location: 4;
+}
+
+window {
+    width: 100px;
+    x-offset: -25px;
+    y-offset: 0px;
+    border: 0;
+    border-radius: 12;
+}
+
+listview {
+    columns: 1;
+    lines: 5;
+    spacing: 10px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+mainbox {
+    children: [ listview ];
+    spacing: 10px;
+    padding: 8px;
+}
+
+
+element-text {
+    background-color: inherit;
+    text-color: @foreground;
+    font: "Symbols Nerd Font 15";
+    horizontal-align: 0.5;
+    cursor: pointer;
+    padding: 20 5 20 -5;
+}
+
+element selected {
+    background-color: @selected;
+    border: 0px 0px 0px 0px;
+    border-radius: 8;
+}
