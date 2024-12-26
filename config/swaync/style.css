@@ -7,5 +7,5 @@
 @define-color color4        #c47fd5;
 
 
-@import 'themes/nova-dark/notifications.css';
-@import 'themes/nova-dark/central_control.css';
+@import 'themes/notifications.css';
+@import 'themes/central_control.css';

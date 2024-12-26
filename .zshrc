@@ -71,5 +71,12 @@ if [ -f '/home/mxarc/google-cloud-sdk/path.zsh.inc' ]; then . '/home/mxarc/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/mxarc/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/mxarc/google-cloud-sdk/completion.zsh.inc'; fi
 
+# pyenv config
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
 # load starship prompt
 eval "$(starship init zsh)"
