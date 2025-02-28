@@ -14,7 +14,6 @@
     blurBackground: #141b1ebf;
     selected: #b3b9b833;
     selectedForeground: @white;
-    accent: @green;
+    accent: @lightBackground;
     foreground: @white;
-
 }

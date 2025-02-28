@@ -6,7 +6,8 @@
 
   all: unset;
   font-size: 14px;
-  font-family: "Iosevka Nerd Font 10";
+  font-family: "SF Pro Display";
+  font-weight: 500;
   transition: 200ms;
 
 }

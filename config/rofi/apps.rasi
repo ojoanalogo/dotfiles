@@ -30,7 +30,7 @@ window {
 
 hero {
   children: [inputbar, dummy, mode-switcher];
-  background-image: url("~/.config/rofi/assets/ag.jpg", height);
+  background-image: url("~/.config/rofi/assets/sonoma-above.jpeg", height);
   background-color: @background;
   orientation:  vertical;
   padding: 20px;
@@ -43,6 +43,7 @@ inputbar {
   background-color: @blurBackground;
   expand: false;
   padding: 10px;
+  border-radius: 8;
 }
 
 prompt {

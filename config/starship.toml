@@ -10,6 +10,7 @@ disabled = false
 
 [aws]
 symbol = " "
+disabled = true
 
 [buf]
 symbol = " "

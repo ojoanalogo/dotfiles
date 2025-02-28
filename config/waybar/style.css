@@ -1,0 +1,151 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "SF Mono, Iosevka NF";
+  font-weight: 800;
+  font-size: 10px;
+  font-style: normal;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(20, 27, 30, 0.45);
+}
+
+#custom-updates,
+#custom-caffeine,
+#custom-weather,
+#custom-menu,
+#custom-wallpaper,
+#custom-spotify,
+#custom-proton-vpn,
+#keyboard-state,
+#custom-notification,
+#window,
+#clock,
+#pulseaudio,
+#language,
+#network,
+#backlight,
+#workspaces,
+#cpu,
+#battery,
+#memory,
+#tray,
+#temperature {
+  color: #fff;
+  background: rgba(5, 5, 5, 0.65);
+  padding: 0 12px;
+  border-radius: 8px;
+  margin: 4px 2px;
+}
+
+#custom-notification {
+  padding-right: 15px;
+}
+
+#custom-menu {
+  margin-left: 5px;
+  margin-right: 0.1rem;
+  padding: 4px 16px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#backlight {
+  color: #e5c76b;
+}
+
+#workspaces {
+  font-weight: normal;
+  font-style: normal;
+}
+
+#workspaces button {
+  padding: 0 2;
+}
+
+#workspaces button.active {
+  color: #e5c76b;
+}
+
+#tray menu {
+  background-color: #151515;
+  color: #dadada;
+  border-radius: 8px;
+}
+
+#custom-spotify {
+  color: #8ccf7e;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#battery {
+  color: #1db954;
+  margin-left: 0;
+  padding-left: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+#language {
+  color: #6cbfbf;
+}
+
+#custom-updates {
+  color: #f5c2e7;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+#custom-wallpaper {
+  color: #67b0e8;
+}
+
+#clock {
+  color: #dadada;
+}
+
+#network {
+  color: #f9e2af;
+}
+
+#cpu {
+  margin-right: 0;
+  padding-right: 12px;
+  border-radius: 8px 0 0 8px;
+  color: #b3b9b8;
+}
+
+#memory {
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 12px;
+  border-radius: 0;
+  color: #b3b9b8;
+}
+
+#temperature {
+  border-radius: 0;
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 12px;
+  color: #e57474;
+}
+
+#pulseaudio {
+  color: #67b0e8;
+  margin-right: 0;
+  padding-right: 12px;
+  border-radius: 8px 0 0 8px;
+}
+
+#pulseaudio.microphone {
+  margin-left: 0;
+  padding-left: 0;
+  color: #cba6f7;
+  border-radius: 0 8px 8px 0;
+}

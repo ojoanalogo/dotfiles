@@ -2,7 +2,7 @@
 
 window {
     transparency: "real";
-    background-color: @blurBackground;
+    background-color: @background;
     text-color: @foreground;
     border-radius: 8px;
     width: 18%;
@@ -10,7 +10,7 @@ window {
     x-offset: 0;
     y-offset: 0;
     border: 10px;
-    border-color: @accent;
+    border-color: @background;
 }
 
 mainbox {
@@ -21,21 +21,21 @@ mainbox {
 
 inputbar {
     children: [ prompt, entry ];
-    background-color: @accent;
-    text-color: @background;
+    background-color: @background;
+    text-color: @foreground;
     expand: false;
 }
 
 prompt {
     enabled: true;
     padding: 10px;
-    background-color: @accent;
+    background-color: @background;
     text-color: @foreground;
     font: "Iosevka NFM 12";
 }
 
 entry {
-    background-color: @accent;
+    background-color: @background;
     text-color: @foreground;
     placeholder-color: @foreground;
     expand: false;

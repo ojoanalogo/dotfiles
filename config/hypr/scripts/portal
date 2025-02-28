@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Kill existing portal instances first
+killall -e xdg-desktop-portal-hyprland || true
+killall xdg-desktop-portal || true
+
+# Update D-Bus environment
+dbus-update-activation-environment --systemd --all
+systemctl --user import-environment QT_QPA_PLATFORMTHEME
+
+# Start portal implementations
+sleep 1
+killall -e xdg-desktop-portal-hyprland
+killall xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-hyprland &
+sleep 2
+/usr/lib/xdg-desktop-portal &
